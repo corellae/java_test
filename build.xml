@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <project name="JarBuild" basedir="." default="jarfile">
-
+<!--
         <target name="init" description="Initializes properties">
                 <property name="app.name" value="helloWorld-v1.0" />
                 <property name="src.dir" value="src" />
@@ -9,8 +9,10 @@
                 <property name="classes.dir" value="${build.dir}/classes" />
                 <property name="etc.dir" value="etc" />
         </target>
+-->
 
-        <target name="prepare" description="Creates the build and classes directories" depends="init">
+        <!--<target name="prepare" description="Creates the build and classes directories" depends="init">-->
+        <target name="prepare" description="Creates the build and classes directories">
                 <mkdir dir="${classes.dir}" />
         </target>
 
@@ -22,7 +24,8 @@
                 <jar destfile="${build.dir}/${app.name}.jar" basedir="${classes.dir}" manifest="${etc.dir}/MANIFEST.MF" />
         </target>
 
-        <target name="clean" description="Delete the build directory" depends="init">
+        <!--<target name="clean" description="Delete the build directory" depends="init">-->
+        <target name="clean" description="Delete the build directory">
                 <delete dir="${build.dir}" />
         </target>
 
